@@ -4,7 +4,6 @@ using namespace std;
 int decToBinary(int n)
 {
     int ans = 0, pow = 1;
-
     while (n > 0)
     {
         int rem = n % 2;
@@ -14,7 +13,6 @@ int decToBinary(int n)
     }
     return ans;
 }
-
 int main()
 {
     int decNum = 9;
