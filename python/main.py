@@ -1,8 +1,7 @@
-n = 5
-fact = 1
-i = 1
-while i <= n:
-    fact*=i
-    i+=1
-
-print(fact)
+class Student:
+    def __init__(self, name):
+        self.name = name
+s1 = Student("Rahat")
+print(s1.name)
+del s1.name
+print(s1.name)
