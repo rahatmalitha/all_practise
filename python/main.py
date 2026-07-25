@@ -1,20 +1,10 @@
-arr = [1,2,9,1,15]
-n = len(arr)
-lp = 0
-rp = n-1
+def changecase(func):
+    def inner():
+        return func().upper()
+    return inner
 
-while lp < rp:
-    if arr[lp] > arr[rp]:
-        temp = arr[lp]
-        arr[lp] = arr[rp]
-        arr[rp] = temp
+@changecase
+def printHello():
+    return "Hello WOrld"
 
-    if arr[lp] > arr[rp]:
-        lp+=1
-    else: 
-        rp-=1
-
-for val in arr:
-    print(val, end=" ")
-
-
+print(printHello())
