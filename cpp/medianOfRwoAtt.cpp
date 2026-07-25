@@ -19,15 +19,17 @@ int main()
         newNums.push_back(n2[i]);
     }
 
-    for (int i = 0; i < newNums.size(); i++)
+    int lp = 0, rp = (newNums.size()) - 1, temp = 0;
+    while (lp < rp)
     {
-        for (int j = 1; j < newNums.size(); j++)
+        if (newNums[lp] > newNums[rp])
         {
-            if (newNums[i] > newNums[j])
-            {
-                newNums[i] = newNums[j];
-            }
+            temp = newNums[lp];
+            newNums[lp] = newNums[rp];
+            newNums[rp] = temp;
         }
+
+        newNums[lp] > newNums[rp] ? lp++ : rp--;
     }
 
     for (int i = 0; i < newNums.size(); i++)

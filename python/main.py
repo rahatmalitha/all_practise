@@ -1,13 +1,20 @@
-PI = 22/7
+arr = [1,2,9,1,15]
+n = len(arr)
+lp = 0
+rp = n-1
 
-class Circle:
-    def __init__(self, radius):
-        self.radius = radius
-    def area(self):
-        return PI * self.radius ** 2
-    def perimeter(self):
-        return 2 * PI * self.radius
+while lp < rp:
+    if arr[lp] > arr[rp]:
+        temp = arr[lp]
+        arr[lp] = arr[rp]
+        arr[rp] = temp
 
-c1 = Circle(21)
-print(c1.area())
-print(c1.perimeter())
+    if arr[lp] > arr[rp]:
+        lp+=1
+    else: 
+        rp-=1
+
+for val in arr:
+    print(val, end=" ")
+
+
