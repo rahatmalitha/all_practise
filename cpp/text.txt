@@ -1,0 +1,20 @@
+int t, n, k, ans = 0, count;
+    cin >> t;
+    while (t--)
+    {
+        cin >> n >> k;
+
+        for (int a = 0; a <= n; a++)
+        {
+            int b;
+            b = n - a;
+            count = __builtin_popcount(a) + __builtin_popcount(b);
+
+            if (count > ans)
+            {
+                ans = count;
+            }
+        }
+
+        cout << ans << endl;
+    }
