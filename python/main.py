@@ -1,10 +1,7 @@
-def changecase(func):
-    def inner():
-        return func().upper()
-    return inner
+import camelcase
 
-@changecase
-def printHello():
-    return "Hello WOrld"
+c = camelcase.CamelCase()
 
-print(printHello())
+txt = "hello world, hi rahat"
+
+print(c.hump(txt))
