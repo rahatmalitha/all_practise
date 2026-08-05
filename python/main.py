@@ -1,7 +1,6 @@
-import camelcase
+t = int(input())
 
-c = camelcase.CamelCase()
-
-txt = "hello world, hi rahat"
-
-print(c.hump(txt))
+while t > 0:
+    k, x = map(int, input().split())
+    print(k * x + 1)
+    t -= 1
