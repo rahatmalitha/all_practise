@@ -2,25 +2,33 @@
 #include <vector>
 using namespace std;
 
-int main()
+vector<int> prodArr(vector<int> &nums)
 {
-    int t;
-    cin >> t;
-    int x, y;
+    int n = nums.size();
+    vector<int> ans(n, 1);
 
-    while (t--)
+    for (int i = 1; i < n; i++)
     {
-        cin >> x;
-        cin >> y;
-        if (x % y == 0)
-        {
-            cout << "YES" << endl;
-        }
-        else
-        {
-            cout << "NO" << endl;
-        }
+        ans[i] = ans[i - 1] * nums[i - 1];
     }
 
+    int suffix = 1;
+    for (int i = n - 2; i >= 0; i--)
+    {
+        suffix *= nums[i + 1];
+        ans[i] = suffix * ans[i];
+    }
+
+    return ans;
+}
+
+int main()
+{
+    vector<int> nums = {1, 2, 3, 4};
+    vector<int> res = prodArr(nums);
+    for (int i = 0; i < res.size(); i++)
+    {
+        cout << res[i] << endl;
+    }
     return 0;
 }
