@@ -1,6 +1,5 @@
-n = input("Enter a number: ")
+from collections import Counter
 
-if n == n[::-1]:
-    print("palindrome")
-else:
-    print("Not Palindrome")
+text = "Hello world hi guys Hello"
+freq = Counter(text.split())
+print(freq)

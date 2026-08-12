@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main()
 {
-    int r1, c1, r2, c2, mult = 1;
+    int r1, c1, r2, c2;
     printf("Enter 1st Matrix Row & Column Size: ");
     scanf("%d %d", &r1, &c1);
     int a[r1][c1];
@@ -27,7 +27,7 @@ int main()
         }
     }
 
-    if (r1 != c2)
+    if (c1 != r2)
     {
         printf("Multiplication is not possible!");
         return -1;
