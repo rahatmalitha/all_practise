@@ -5,7 +5,7 @@ double func(double x)
     return x * x * x - x - 1;
 }
 
-void bisection(double a, double b, int max_iter)
+void falseMethod(double a, double b, int max_iter)
 {
     if (func(a) * func(b) >= 0)
     {
@@ -16,12 +16,12 @@ void bisection(double a, double b, int max_iter)
     double c;
     int iter = 0;
 
-    printf("Iter\t  a\t\t   b\t\t   f(c)\n");
+    printf("Iter\t  a\t\t   b\t\t   c\t\t   f(c)\n");
     printf("--------------------------------------------------------------------\n");
 
     while (iter < max_iter)
     {
-        c = (a + b) / 2;
+        c = ((a * func(b)) - (b * func(a))) / (func(b) - func(a));
         printf("%3d\t%lf\t%lf\t%lf\t%lf\n", iter + 1, a, b, c, func(c));
 
         if (func(c) == 0.0)
@@ -51,7 +51,7 @@ int main()
     scanf("%lf %lf", &a, &b);
     printf("Enter the number of iterations: ");
     scanf("%d", &max_iterations);
-    bisection(a, b, max_iterations);
+    falseMethod(a, b, max_iterations);
 
     return 0;
 }
