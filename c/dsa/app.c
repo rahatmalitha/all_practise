@@ -7,9 +7,9 @@ int main()
     int position = 2;
     int value = 25, i;
 
-    for (i = 2; i < n; i++)
+    for (i = n; i > position; i--)
     {
-        a[i + 1] = a[i];
+        a[i] = a[i - 1];
     }
     a[position] = value;
     n++;
